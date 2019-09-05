@@ -49,12 +49,12 @@ def test_shuffle_xy_pairs(f):
 def test_relu(f):
 
     for i in np.random.uniform(0,sys.float_info.max, 1000):
-        assert(f(i) == i), "Positive values for relu function gives wrong output"
+        assert(f(np.array([i])) == i), "Positive values for relu function gives wrong output"
     for i in np.random.uniform(-sys.float_info.max, -sys.float_info.min, 1000):
-        assert(f(i) == 0), "Negative values for relu function gives wrong output"
-    assert(f(sys.float_info.max) == sys.float_info.max), "float max value give wrong answer for relu"
-    assert(f(sys.float_info.min) == sys.float_info.min), "float min value give wrong answer for relu"
-    assert(f(-sys.float_info.min) == 0), "negative float min value give wrong answer for relu"
+        assert(f(np.array([i])) == 0), "Negative values for relu function gives wrong output"
+    assert(f(np.array([sys.float_info.max])) == sys.float_info.max), "float max value give wrong answer for relu"
+    assert(f(np.array([sys.float_info.min])) == sys.float_info.min), "float min value give wrong answer for relu"
+    assert(f(np.array([-sys.float_info.min])) == 0), "negative float min value give wrong answer for relu"
     
     z_test = np.random.uniform(sys.float_info.min, sys.float_info.max, (100,100))
     assert(f(z_test).shape == (100,100)), "The output shape of relu is not equal to the input"
