@@ -169,9 +169,9 @@ def test_calculate_q_targets(calculate_q_targets_function):
         (N, )), "Failed: Incorrect size of Q tensor"
 
     sub_test_name = "All input zero"
-    assert torch.equal(
-        calculated_targets,
-        true_targets), "Failed: Incorrect Q targets. Subtest: '{}'".format(
+    assert torch.allclose(
+        calculated_targets, true_targets,
+        rtol=1e-03), "Failed: Incorrect Q targets. Subtest: '{}'".format(
             sub_test_name)
 
     # Non-zero values
@@ -189,9 +189,9 @@ def test_calculate_q_targets(calculate_q_targets_function):
     calculated_targets = calculate_q_targets_function(q1_batch, q2_batch,
                                                       r_batch,
                                                       nonterminal_batch, gamma)
-    assert torch.equal(
-        calculated_targets,
-        true_targets), "Failed: Incorrect Q targets. Subtest: '{}'".format(
+    assert torch.allclose(
+        calculated_targets, true_targets,
+        rtol=1e-03), "Failed: Incorrect Q targets. Subtest: '{}'".format(
             sub_test_name)
 
     # Terminal state
@@ -209,9 +209,9 @@ def test_calculate_q_targets(calculate_q_targets_function):
     calculated_targets = calculate_q_targets_function(q1_batch, q2_batch,
                                                       r_batch,
                                                       nonterminal_batch, gamma)
-    assert torch.equal(
-        calculated_targets,
-        true_targets), "Failed: Incorrect Q targets. Subtest: '{}'".format(
+    assert torch.allclose(
+        calculated_targets, true_targets,
+        rtol=1e-03), "Failed: Incorrect Q targets. Subtest: '{}'".format(
             sub_test_name)
 
     sub_test_name = "Single action"
@@ -227,9 +227,9 @@ def test_calculate_q_targets(calculate_q_targets_function):
     calculated_targets = calculate_q_targets_function(q1_batch, q2_batch,
                                                       r_batch,
                                                       nonterminal_batch, gamma)
-    assert torch.equal(
-        calculated_targets,
-        true_targets), "Failed: Incorrect Q targets. Subtest: '{}'".format(
+    assert torch.allclose(
+        calculated_targets, true_targets,
+        rtol=1e-03), "Failed: Incorrect Q targets. Subtest: '{}'".format(
             sub_test_name)
 
     print('Passed: Calculate Q targets test, for function "{}"'.format(
