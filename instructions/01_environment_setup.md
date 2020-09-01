@@ -46,8 +46,9 @@ There are a few ways to handle this, see [separate instructions](https://github.
 Make sure that your Conda environment is always up-to-date with the latest environment file available from the GitHub repo. We will try to make a Canvas announcement whenever it is updated.
 
 How to update the Conda environment:
+
 - Navigate to the git repo you have cloned.
-- Make sure that you have the latest version of the repo.
+- Make sure that you have the latest version of the repo (see [above](#keeping-the-repo-in-sync)).
 - Make sure the conda environment is deactivated (see above).
 - Type e.g. `conda env update -f conda-environment-files/conda-environment-cpu-win.yml --prune`. Note however that the appropriate environment file to be used varies depending on your system. See section below for more info.
 - Now you can activate the environment again.
