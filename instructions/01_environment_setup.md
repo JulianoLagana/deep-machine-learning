@@ -36,7 +36,7 @@ There are a few ways to handle this, see [separate instructions](https://github.
    This has to be done every time you start up a new terminal window.
    Activate it by the command `conda activate dml`.
 1. You should now see `(dml)` printed at the start of every row in the terminal, indicating, that the `dml` environment is activated. If this does not happen, most probably the `conda init` step was not carried out successfully during installation.
-1. Now you can start using Jupyter notebook. To do so, type `jupyter notebook`
+1. Now you can start using Jupyter notebook. To do so, type `jupyter notebook`. Your web browser should automatically open up and navigate to http://localhost:8888, letting you access Jupyter.
 1. Please have a look at the two Jupyter notebooks, *testing_notebook.ipynb* and *Getting started with JN.ipynb*, available in the folder [`python-crash-course`](https://github.com/JulianoLagana/deep-machine-learning/tree/master/python-crash-course). The first file checks if the installation was successful, whereas the second file give you initial advices regarding how to use Jupyter notebooks.
 1. To deactivate the conda environment, you simply type `conda deactivate`.
 
@@ -49,8 +49,16 @@ How to update the Conda environment:
 - Navigate to the git repo you have cloned.
 - Make sure that you have the latest version of the repo.
 - Make sure the conda environment is deactivated (see above).
-- Type `conda env update -f conda-environment-files/conda-environment-cpu.yml --prune`
+- Type e.g. `conda env update -f conda-environment-files/conda-environment-cpu-win.yml --prune`. Note however that the appropriate environment file to be used varies depending on your system. See section below for more info.
 - Now you can activate the environment again.
 
-## GPU-version
-On GitHub, there is one `conda-environment-cpu.yml` file and one `conda-environment-gpu.yml` file. If you want to work locally with your GPU-enabled computer, you can try to use the GPU version instead, and hopefully this will work for you. It can however be quite a hassle to properly install a GPU-enabled deep learning environment, and we do not have the resources to help you out here.
+## CPU / GPU and Windows / Unix conda environment files
+On GitHub, there are different conda environment files intended for CPU / GPU as well as Windows / Unix platforms:
+- `conda-environment-cpu-win.yml`
+- `conda-environment-cpu-unix.yml`
+- `conda-environment-gpu-win.yml`
+- `conda-environment-gpu-unix.yml`
+
+If, while working in the cloud, you have reason to update the (pre-installed) conda environment, the `conda-environment-gpu-unix.yml` file is always to be used.
+
+When working on your own computer however, you should use the `win` rather than `unix` version if you are running Windows rather than Mac / Linux / etc. In this case, the `cpu` version should typically be used. If you have a compatible Nvidia GPU, you can however try to make use of it by simply using the `gpu` version instead, and hopefully this will work well. It can however be quite a hassle to properly install a GPU-enabled deep learning environment, and we do not have the resources to help you out here.
