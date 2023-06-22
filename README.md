@@ -1,4 +1,10 @@
-# Repository for SSY340 - Deep Machine Learning
+# DEPRECATED Repository for SSY340 - Deep Machine Learning
+
+**DEPRECATED**
+
+**This repository is deprecated and has been replaced by [this one](https://github.com/dml-cth/deep-machine-learning). If you were linked here from the course website, please report it to the course staff.**
+
+
 This is the GitHub repository for the course SSY340 - Deep Machine Learning.
 
 **DO NOT FORK THIS REPOSITORY**\
